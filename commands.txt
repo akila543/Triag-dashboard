@@ -1,0 +1,1 @@
+sudo docker inspect --format='{{.Id}} {{.Parent}}' \ $(docker images --filter since=3b845db03944 --quiet)

@@ -14,8 +14,6 @@ import Dialog, {
   DialogContentText,
   DialogTitle,
 } from '@material-ui/core/Dialog';
-import request from 'superagent';
-import Carousel from './Carousel.jsx';
 
 const styles={
     appbar:{
@@ -24,7 +22,7 @@ const styles={
         height: "80px"
    }
 }
-class App extends React.Component {
+class Login extends React.Component {
 constructor(props){
     super(props);
 
@@ -36,30 +34,25 @@ render() {
 
       return (
      <div>
-        <AppBar position="static" style={styles.appbar}>
          <Toolbar>
             
             <Typography variant="title" color="inherit" style={{textAlign:'center'}}>
-              Triag Dashboard
+               Welcome to Triag Dashboard
             </Typography>
-            
-            <Link to='/loadconf'>
-            <Button  name="button" style={{marginLeft:"700px",marginBottom:'-10px',color:"black",backgroundColor:"#67696d"}}>
-            <Typography variant="button"> LOG </Typography>
-           </Button></Link>
-          
-             <a href = '/logout'>
+            <a href = '/auth/google'>
               <Button  name="button" style={{marginLeft:"100px",marginBottom:'-10px',color:"black",backgroundColor:"#67696d"}}>
-            Logout
+            Login via Google
            </Button>
             </a>
             
+           
+          
         </Toolbar>
-        </AppBar>
-        <Carousel/>
+        
+
      </div>
 
       );
    }
 }
-export default App;
+export default Login;

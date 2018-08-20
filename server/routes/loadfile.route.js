@@ -1,6 +1,5 @@
 const loadconf =  require('express').Router(),
-      request = require('superagent'),
-      mongodb = require('mongodb').MongoClient;
+      request = require('superagent');
 var exec= require('child_process').exec;
 var  spawn  = require('child_process').spawn;
 
@@ -18,7 +17,7 @@ if(type=="SQL"){
 }
 else if(type=="sample"){
    
-  exec('nohup /home/akila/logstash-6.3.2/bin/logstash -f /home/akila/Triag_dashboard/conf/sample2.conf',function(err,stdout,stderr){
+  exec('nohup /home/akila/logstash-6.3.2/bin/logstash -f /home/akila/Triag_dashboard/conf/sampledocker.conf',function(err,stdout,stderr){
   console.log(stdout)
   console.log('errr',stderr);
   console.log(err);
